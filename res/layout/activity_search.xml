@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#ffffff">
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_100dp"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/d_30dp"
+        android:paddingRight="@dimen/d_30dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/bg_main_top">
+        <com.person.widget.ClearEditText 
+            android:id="@+id/searchTxt"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/d_76dp"
+            android:layout_weight="1"
+            android:background="@drawable/search_edit_bg"
+            android:textColor="#222222"
+            android:textSize="@dimen/d_26dp"
+            android:imeOptions="actionSearch"
+            android:hint="请输入关键字"
+            android:maxLength="32"
+            android:singleLine="true"/>
+        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/d_30dp"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/d_30dp"
+            android:clickable="true"
+            android:text="取消"
+            android:onClick="onClose"/>
+    </LinearLayout>
+    
+    <WebView 
+        android:id="@+id/web"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+</LinearLayout>

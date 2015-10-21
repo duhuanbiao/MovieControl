@@ -1,0 +1,91 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#ffffff" >
+    <com.viewpagerindicator.TabPageIndicator
+        android:id="@+id/indicatorFood"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fafafa"
+        android:visibility="gone" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pagerFood"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+    
+        <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_4dp"
+        android:layout_marginTop="@dimen/d_4dp"
+        android:layout_marginBottom="@dimen/d_4dp"
+        android:background="@drawable/line_divide"
+        />
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp">
+        <TextView 
+            android:id="@+id/count_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/d_10dp"
+            android:singleLine="true"
+            android:layout_alignParentLeft="true"
+            android:textColor="#000000"
+            android:textSize="@dimen/d_26dp"
+            android:textStyle="bold"
+            android:text="数量："/>
+        <TextView 
+            android:id="@+id/price_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/d_10dp"
+            android:layout_below="@id/count_title"
+            android:singleLine="true"
+            android:layout_alignParentLeft="true"
+            android:textColor="#000000"
+            android:textSize="@dimen/d_26dp"
+            android:textStyle="bold"
+            android:text="总价："/>        
+        <TextView 
+            android:id="@+id/count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_toRightOf="@id/count_title"
+            android:layout_alignBaseline="@id/count_title"
+            android:textColor="#3eab00"
+            android:textSize="@dimen/d_30dp"
+            android:text="0"/>
+ 
+        <TextView 
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_toRightOf="@id/price_title"
+            android:layout_alignBaseline="@id/price_title"
+            android:textColor="#3eab00"
+            android:textSize="@dimen/d_30dp"
+            android:text="0元"/>
+        
+        <Button 
+            android:id="@+id/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/d_20dp"
+            android:text="点餐"
+            android:textColor="#3eab00"
+            android:textSize="@dimen/d_26dp"
+            android:background="@drawable/btn_order"
+            />
+        
+    </RelativeLayout>
+    
+</LinearLayout>
