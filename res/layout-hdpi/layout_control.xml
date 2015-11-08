@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2c304b"
+    android:padding="@dimen/d_30dp" >
+
+    <Button
+        style="@style/control_button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/d_20dp"
+        android:background="@drawable/btn_mute"
+        android:onClick="onMute" />
+
+    <Button
+        android:id="@+id/stop"
+        style="@style/control_button"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="@dimen/d_20dp"
+        android:background="@drawable/btn_stop"
+        android:onClick="onStop" />
+
+    <Button
+        android:id="@+id/volume_add"
+        style="@style/control_button"
+        android:layout_below="@id/stop"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/d_20dp"
+        android:background="@drawable/btn_volume_add"
+        android:onClick="onVAdd" />
+
+    <Button
+        android:id="@+id/ok"
+        style="@style/control_button"
+        android:layout_below="@id/volume_add"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/d_20dp"
+        android:background="@drawable/btn_ok"
+        android:onClick="onOk" />
+
+    <Button
+        android:id="@+id/volume_sub"
+        style="@style/control_button"
+        android:layout_below="@id/ok"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/d_20dp"
+        android:background="@drawable/btn_volume_sub"
+        android:onClick="onVSub" />
+
+    <Button
+        android:id="@+id/prev"
+        style="@style/control_button"
+        android:layout_alignBaseline="@id/ok"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/d_20dp"
+        android:layout_toLeftOf="@id/ok"
+        android:background="@drawable/btn_prev"
+        android:onClick="onPrev" />
+
+    <Button
+        android:id="@+id/next"
+        style="@style/control_button"
+        android:layout_alignBaseline="@id/ok"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/d_20dp"
+        android:layout_toRightOf="@id/ok"
+        android:background="@drawable/btn_next"
+        android:onClick="onNext" />
+
+    <Button
+        android:id="@+id/setting"
+        style="@style/control_button"
+        android:layout_below="@id/volume_sub"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/d_20dp"
+        android:background="@drawable/btn_setting" 
+        android:onClick="onSetting"/>
+
+    <Button
+        android:id="@+id/about"
+        style="@style/control_button"
+        android:layout_below="@id/setting"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/d_20dp"
+        android:background="@drawable/btn_about"
+        android:onClick="onAbout" />
+
+    <View 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/d_30dp"
+        android:background="@drawable/bg_control_control"
+        android:layout_alignTop="@id/volume_add"
+        android:layout_alignBottom="@id/volume_sub"
+        android:layout_alignLeft="@id/prev"
+        android:layout_alignRight="@+id/next"
+        />
+    
+</RelativeLayout>

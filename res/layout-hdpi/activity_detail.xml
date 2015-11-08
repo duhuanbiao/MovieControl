@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#ffffff">
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_94dp"
+        android:background="#3d3524">
+        <com.person.widget.BigButton
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/d_36dp"
+            android:background="@drawable/btn_exit"
+            android:onClick="onClose"/>
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/d_20dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/back"
+            android:text="返回"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/d_30dp"
+            android:clickable="true"
+            android:onClick="onClose"/>
+        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/d_36dp"
+            android:text="详   情"/>
+    </RelativeLayout>
+    
+    <WebView 
+        android:id="@+id/web"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+</LinearLayout>

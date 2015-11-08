@@ -19,6 +19,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.util.Log;
@@ -194,6 +195,11 @@ public class FragmentMovie extends Fragment {
 				if (cur != null) {
 					cur.updateUrl(generateLoadUrl(mCategoryMovie.mCategoryMovieList
 							.get(arg0)));
+					
+					mFilterMap.clear();
+					filterView.removeAllViews();
+					filterView.add(mInfoFilter);
+					filterView.setVisibility(View.GONE);
 				}
 			}
 
@@ -280,7 +286,7 @@ public class FragmentMovie extends Fragment {
 	 * @author len
 	 * 
 	 */
-	class TabPageIndicatorAdapter extends FragmentPagerAdapter {
+	class TabPageIndicatorAdapter extends FragmentStatePagerAdapter {
 		public TabPageIndicatorAdapter(FragmentManager fm) {
 			super(fm);
 		}

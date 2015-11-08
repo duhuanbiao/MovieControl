@@ -1,7 +1,5 @@
 package com.person.widget;
 
-import java.util.List;
-
 import com.person.model.InfoFilter;
 import com.person.model.InfoFilter.FilterItem;
 import com.person.model.InfoFilter.FilterPair;

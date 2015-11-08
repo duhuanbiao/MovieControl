@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/d_100dp"
+    android:orientation="vertical" 
+    android:background="@color/bg">
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:background="@drawable/bg_main_top"
+	    android:padding="@dimen/d_20dp"
+	    android:gravity="center_vertical"
+	    android:orientation="horizontal">
+	    <ImageView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:scaleType="fitXY"
+	        android:src="@drawable/ic_launcher"/>
+	    
+	    <TextView 
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:layout_marginLeft="@dimen/d_20dp"
+	        android:text="@string/app_name"
+	        android:textSize="@dimen/d_34dp"
+	        android:shadowColor="#000000"
+	        android:textStyle="italic"
+	        android:shadowDx="1"
+	        android:shadowDy="1"
+	        android:textColor="#ffffff"/>
+	    
+	    <Button 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@drawable/btn_search"
+	        android:onClick="onSearch"/>
+	    
+	    <Button 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="@dimen/d_24dp"
+	        android:background="@drawable/btn_control"
+	        android:onClick="onControl"/>
+	</LinearLayout>
+
+	<FrameLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+	
+</LinearLayout>
