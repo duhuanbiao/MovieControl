@@ -193,13 +193,14 @@ public class FragmentMovie extends Fragment {
 			public void onPageSelected(int arg0) {
 				FragmentItemMovie cur = mItemFragmentMap.get(arg0);
 				if (cur != null) {
-					cur.updateUrl(generateLoadUrl(mCategoryMovie.mCategoryMovieList
-							.get(arg0)));
-					
 					mFilterMap.clear();
 					filterView.removeAllViews();
 					filterView.add(mInfoFilter);
 					filterView.setVisibility(View.GONE);
+					tvFilter.setTag(null);
+					
+					cur.updateUrl(generateLoadUrl(mCategoryMovie.mCategoryMovieList
+							.get(arg0)));
 				}
 			}
 

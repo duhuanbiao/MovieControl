@@ -27,7 +27,7 @@
         style="@style/control_button"
         android:layout_below="@id/stop"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/d_20dp"
+        android:layout_marginTop="@dimen/d_24dp"
         android:background="@drawable/btn_volume_add"
         android:onClick="onVAdd" />
 
@@ -36,7 +36,7 @@
         style="@style/control_button"
         android:layout_below="@id/volume_add"
         android:layout_centerInParent="true"
-        android:layout_marginTop="@dimen/d_20dp"
+        android:layout_marginTop="@dimen/d_24dp"
         android:background="@drawable/btn_ok"
         android:onClick="onOk" />
 
@@ -45,7 +45,7 @@
         style="@style/control_button"
         android:layout_below="@id/ok"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/d_20dp"
+        android:layout_marginTop="@dimen/d_24dp"
         android:background="@drawable/btn_volume_sub"
         android:onClick="onVSub" />
 
@@ -54,7 +54,7 @@
         style="@style/control_button"
         android:layout_alignBaseline="@id/ok"
         android:layout_centerVertical="true"
-        android:layout_marginRight="@dimen/d_20dp"
+        android:layout_marginRight="@dimen/d_24dp"
         android:layout_toLeftOf="@id/ok"
         android:background="@drawable/btn_prev"
         android:onClick="onPrev" />
@@ -64,7 +64,7 @@
         style="@style/control_button"
         android:layout_alignBaseline="@id/ok"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="@dimen/d_20dp"
+        android:layout_marginLeft="@dimen/d_24dp"
         android:layout_toRightOf="@id/ok"
         android:background="@drawable/btn_next"
         android:onClick="onNext" />
@@ -74,7 +74,7 @@
         style="@style/control_button"
         android:layout_below="@id/volume_sub"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/d_20dp"
+        android:layout_marginTop="@dimen/d_30dp"
         android:background="@drawable/btn_setting" 
         android:onClick="onSetting"/>
 
