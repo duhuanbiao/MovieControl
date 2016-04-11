@@ -194,72 +194,72 @@ public class FragmentFood extends Fragment {
 	}
 	
 	private void submitOrder(){
-//		final ProgressDialog pbWaiting = new ProgressDialog(getActivity());
-//		pbWaiting.setMessage("正在提交订单...");
-//		pbWaiting.show();
-//		
-//		//产生参数
-//		JSONObject object = new JSONObject();
-//		JSONArray jsonArray = new JSONArray();
-//		JSONObject tmp;
-//		OrderItem item;
-//		Iterator<Entry<String, OrderItem>> iter = mOrderMap.entrySet().iterator();
-//		try{
-//			while (iter.hasNext()) {
-//				Map.Entry entry = (Map.Entry) iter.next();
-//				String menuId = (String) entry.getKey();
-//				item = (OrderItem) entry.getValue();
-//				tmp = new JSONObject();
-//				
-//				tmp.put("menuid", menuId);
-//				tmp.put("count", item.count);
-//				jsonArray.put(tmp);
-//			}
-//			object.put("cmdbody", jsonArray);
-//		}catch(Exception e){
-//			e.printStackTrace();
-//		}
-//		
-//		String url = MovieApp.generateQueryUrl();
-//		Uri dstfetch = Uri.parse(url);
-//		dstfetch = dstfetch.buildUpon()
-//				.appendQueryParameter("roomid", MovieApp.s_roomId)
-//				.appendQueryParameter("get", "" + Config.CODE_INFO_ORDER)
-//				.appendQueryParameter("json", object.toString())
-//				.build();
-//		
-//		Log.d("duhuanbiao", dstfetch.toString());
-//		
-//		DataFetchModule.getInstance().fetchJsonGet(dstfetch.toString(), new JsonListener() {
-//			
-//			@Override
-//			public void onJsonGet(int retcode, String extraMsg, JSONObject jsondata) {
-//				pbWaiting.dismiss();
-//				if (retcode != 0 || jsondata == null || jsondata.optInt("errcode") != 0){
-//					new AlertDialog.Builder(getActivity())
-//						.setMessage("订单提交失败")
-//						.setPositiveButton("确定", null).create().show();
-//				}else{
-//					new AlertDialog.Builder(getActivity())
-//					.setMessage("订单提交成功！请稍后！!")
-//					.setPositiveButton("确定", null).create().show();	
-//					
-//					//清楚数据
-//					resetOrder();
-//				}
-//			}
-//		});
+		final ProgressDialog pbWaiting = new ProgressDialog(getActivity());
+		pbWaiting.setMessage("正在提交订单...");
+		pbWaiting.show();
 		
+		//产生参数
+		JSONObject object = new JSONObject();
+		JSONArray jsonArray = new JSONArray();
+		JSONObject tmp;
+		OrderItem item;
+		Iterator<Entry<String, OrderItem>> iter = mOrderMap.entrySet().iterator();
+		try{
+			while (iter.hasNext()) {
+				Map.Entry entry = (Map.Entry) iter.next();
+				String menuId = (String) entry.getKey();
+				item = (OrderItem) entry.getValue();
+				tmp = new JSONObject();
+				
+				tmp.put("menuid", menuId);
+				tmp.put("count", item.count);
+				jsonArray.put(tmp);
+			}
+			object.put("cmdbody", jsonArray);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 		
-		new AlertDialog.Builder(getActivity())
-		.setMessage("请到前台购买!")
-		.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+		String url = MovieApp.generateQueryUrl();
+		Uri dstfetch = Uri.parse(url);
+		dstfetch = dstfetch.buildUpon()
+				.appendQueryParameter("roomid", MovieApp.s_roomId)
+				.appendQueryParameter("get", "" + Config.CODE_INFO_ORDER)
+				.appendQueryParameter("json", object.toString())
+				.build();
+		
+		Log.d("duhuanbiao", dstfetch.toString());
+		
+		DataFetchModule.getInstance().fetchJsonGet(dstfetch.toString(), new JsonListener() {
 			
 			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				resetOrder();				
+			public void onJsonGet(int retcode, String extraMsg, JSONObject jsondata) {
+				pbWaiting.dismiss();
+				if (retcode != 0 || jsondata == null || jsondata.optInt("errcode") != 0){
+					new AlertDialog.Builder(getActivity())
+						.setMessage("订单提交失败")
+						.setPositiveButton("确定", null).create().show();
+				}else{
+					new AlertDialog.Builder(getActivity())
+					.setMessage("订单提交成功！请稍后！")
+					.setPositiveButton("确定", null).create().show();	
+					
+					//清楚数据
+					resetOrder();
+				}
 			}
-		}).create().show();	
+		});
+		
+		
+//		new AlertDialog.Builder(getActivity())
+//		.setMessage("请到前台购买!")
+//		.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+//			
+//			@Override
+//			public void onClick(DialogInterface dialog, int which) {
+//				resetOrder();				
+//			}
+//		}).create().show();	
 	}
 
 	private String generateLoadUrl(CategoryMovieItem item) {
